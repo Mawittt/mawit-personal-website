@@ -1,0 +1,677 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.index-page {
+
+    main {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: var(--background-0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .intro-card {
+            .intro-content {
+                width: max-content;
+                height: fit-content;
+                position: absolute;
+                box-sizing: content-box;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+
+                .my-title {
+                    color: var(--color-0);
+
+                    // ********************************************************************************************** max-458 ***************************************************/
+                    @include breakpoint(max-458) {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .name {
+                        em {
+                            font-size: 48px;
+                            font-family: 'Gemunu Libre', sans-serif;
+
+                            // ********************************************************************************************** max-1106 ***************************************************/
+                            @include breakpoint(max-1106) {
+                                font-size: 30px;
+                            }
+
+                            // ********************************************************************************************** max-842 ***************************************************/
+                            @include breakpoint(max-842) {
+                                font-size: 20px;
+                            }
+
+                            // ********************************************************************************************** max-458 ***************************************************/
+                            @include breakpoint(max-458) {
+                                font-size: 15px;
+                            }
+
+                            // ********************************************************************************************** max-306 ***************************************************/
+                            @include breakpoint(max-306) {
+                                font-size: 8vw
+                            }
+                        }
+                    }
+
+                    .title {
+                        margin-left: 50px;
+                        padding-left: 0;
+                        font-size: 78px;
+                        font-family: 'Gemunu Libre', sans-serif;
+
+                        em {
+                            font-size: 30px;
+                            font-family: 'prompt', sans-serif;
+
+                            // ********************************************************************************************** max-1106 ***************************************************/
+                            @include breakpoint(max-1106) {
+                                font-size: 20px;
+                            }
+
+                            // ********************************************************************************************** max-842 ***************************************************/
+                            @include breakpoint(max-842) {
+                                font-size: 10px;
+                            }
+
+                            // ********************************************************************************************** max-306 ***************************************************/
+                            @include breakpoint(max-306) {
+                                font-size: 3vw
+                            }
+
+                        }
+
+                        // ********************************************************************************************** max-1106 ***************************************************/
+                        @include breakpoint(max-1106) {
+                            font-size: 60px;
+                        }
+
+                        // ********************************************************************************************** max-842 ***************************************************/
+                        @include breakpoint(max-842) {
+                            font-size: 30px;
+                        }
+
+                        // ********************************************************************************************** max-458 ***************************************************/
+                        @include breakpoint(max-458) {
+                            font-size: 20px;
+                            margin: 0;
+                        }
+
+                        // ********************************************************************************************** max-306 ***************************************************/
+                        @include breakpoint(max-306) {
+                            font-size: 8vw
+                        }
+                    }
+                }
+
+                .description {
+                    margin: auto;
+                    margin-top: 15vh;
+                    max-width: 500px;
+                    text-align: center;
+                    color: var(--color--1);
+
+                    // ********************************************************************************************** max-842 ***************************************************/
+                    @include breakpoint(max-842) {
+                        max-width: 300px;
+                        margin-top: 6vh;
+                    }
+
+                    // ********************************************************************************************** max-306 ***************************************************/
+                    @include breakpoint(max-306) {
+                        max-width: 95vw;
+                    }
+                }
+            }
+        }
+
+        .concerns-card {
+            .concerns-content {
+                position: absolute;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                height: calc(100% - 150px);
+                color: var(--color-0);
+                padding-bottom: 12vh;
+                overflow: scroll;
+
+                .topic {
+                    display: flex;
+                    justify-content: center;
+                    font-family: 'Gemunu Libre', sans-serif;
+                }
+
+                .details {
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    // ********************************************************************** max-1129 **************
+                    @include breakpoint(max-1129) {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .concern-column {
+                        max-width: 280px;
+
+                        // ********************************************************************** max-1129 **************
+                        @include breakpoint(max-1129) {
+                            max-width: 95%;
+                        }
+
+                        .illustration {
+                            display: flex;
+                            justify-content: center;
+                        }
+
+                        .description {
+                            margin: 20px 0;
+
+                            h3 {
+                                text-align: center;
+                                font-family: 'Gemunu Libre', sans-serif;
+
+                                // ********************************************************************** max-1129 **************
+                                @include breakpoint(max-1129) {
+                                    margin: 0;
+                                    margin-top: 10px;
+                                }
+                            }
+
+                            p {
+                                margin: 5px 0;
+                                color: var(--color--1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .projects-card {
+            // display: none;
+            position: relative;
+
+            // *********************************************************** max-1063 **********************
+            @include breakpoint(max-1063) {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(180deg, #1E1E1E 0%, rgba(255, 255, 255, 0) 100%);
+                    z-index: -1;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(360deg, #1E1E1E 0%, rgba(255, 255, 255, 0) 80%);
+                    z-index: -1;
+                }
+            }
+
+            // *********************************************************** max-724 **********************
+            @include breakpoint(max-724) {
+                padding: 0;
+
+                &::before {
+                    background: linear-gradient(180deg, #1E1E1E 0%, rgba(0, 0, 0, 0.382) 100%);
+                }
+
+                &::after {
+                    background: linear-gradient(360deg, #1E1E1E 0%, rgba(0, 0, 0, 0.263) 80%);
+                }
+            }
+
+            .content {
+                height: 100%;
+                max-height: calc(100% - 110px);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 20px;
+
+                .arrow {
+                    width: 32px;
+                    height: 32px;
+                }
+
+                .project {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    max-width: 90%;
+                    width: 90%;
+                    max-height: 100%;
+                    height: 100%;
+                    color: var(--color-0);
+
+                    // *********************************************************** max-458 **********************
+                    @include breakpoint(max-458) {
+                        justify-content: space-around;
+                    }
+
+                    .title {
+                        padding: 0;
+
+                        h2 {
+                            padding: 0;
+                            margin: 0;
+                            font-family: 'Gemunu Libre', sans-serif;
+                        }
+                    }
+
+                    .project-content {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        max-height: calc(100% - 80px);
+                        height: fit-content;
+                        width: 100%;
+                        max-width: 1024px;
+
+                        // *********************************************************** max-724 **********************
+                        @include breakpoint(max-724) {
+                            justify-content: center;
+                        }
+
+                        // *********************************************************** max-617 **********************
+                        @include heightBreakpoint(max-617) {
+                            align-items: flex-start;
+                            overflow: hidden;
+                        }
+                        
+
+
+                        .project-info {
+                            max-width: 250px;
+                            height: 100%;
+                            overflow: scroll;
+                            // *********************************************************** max-458 **********************
+                            @include breakpoint(max-458) {
+                                width: 70vw;
+                            }
+
+                            .name {
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: 20px;
+
+                                // ****************************************************** max-724 ***************************
+                                @include breakpoint(max-724) {
+                                    justify-content: center;
+                                }
+
+                                h2 {
+                                    margin: 0;
+                                    padding: 0;
+                                    margin-right: 5px;
+                                    font-family: "Gemunu Libre", sans-serif;
+                                }
+                            }
+
+                            .description {
+                                margin-bottom: 20px;
+                            }
+
+                            .features-section {
+                                overflow: hidden;
+                                margin-bottom: 20px;
+
+
+                                h3 {
+                                    margin: 0;
+                                    padding: 0;
+                                    margin-bottom: 5px;
+
+                                    // ****************************************************** max-724 ***************************
+                                    @include breakpoint(max-724) {
+                                        text-align: center;
+                                    }
+
+                                }
+
+                                ul.features {
+                                    // max-width: 100px;
+                                    list-style: none;
+                                    display: flex;
+                                    flex-wrap: nowrap;
+                                    margin: 0;
+                                    padding: 0;
+                                    width: max-content;
+
+                                    // overflow: hidden;
+
+                                    .feature {
+                                        color: var(--color--3 , --color--2);
+                                        background: var(--background-1);
+                                        padding: 10px;
+                                        margin: 0 5px;
+                                        font-size: 12px;
+                                        border-radius: 10px 1px;
+
+                                        // *********************************************************** max-724 **********************
+                                        @include breakpoint(max-724) {
+                                            color: var(--color-0);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .technologies-section {
+                                overflow: hidden;
+
+                                h3 {
+                                    margin: 0;
+                                    padding: 0;
+
+                                    // ****************************************************** max-724 ***************************
+                                    @include breakpoint(max-724) {
+                                        text-align: center;
+                                    }
+                                }
+
+                                .technologies {
+                                    display: flex;
+                                    align-items: center;
+
+                                    .technology {
+                                        margin: 0 7px;
+                                        min-width: 50px;
+                                        height: fit-content;
+                                    }
+                                }
+                            }
+                        }
+
+                        .project-mockups {
+                            position: relative;
+                            height: 100%;
+
+                            // *********************************************************** max-1063 **********************
+                            @include breakpoint(max-1063) {
+                                position: static;
+                                // z-index: -1;
+                            }
+
+                            .mockup {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                z-index: -2;
+
+                                &.desktop {
+                                    width: 602.67px;
+                                    height: 364px;
+
+                                    // *********************************************************** max-1063 **********************
+                                    @include breakpoint(max-1063) {
+                                        left: 0;
+                                        top: 0;
+                                        margin: auto;
+                                        padding-right: 10vw;
+                                        transform: translate(-20px, 0);
+
+                                    }
+
+                                    // *********************************************************** max-724 **********************
+                                    @include breakpoint(max-724) {
+                                        transform: translate(-80px, 0) scale(0.7);
+
+                                    }
+
+                                    // *********************************************************** max-458 **********************
+                                    @include breakpoint(max-458) {
+                                        transform: translate(-110px, 0) scale(0.7);
+                                    }
+
+                                }
+
+                                &.tablet {
+                                    height: 274.97px;
+                                    width: 179.19px;
+
+                                    // *********************************************************** max-1063 **********************
+                                    @include breakpoint(max-1063) {
+                                        left: 0;
+                                        top: 0;
+                                        margin: auto;
+                                        padding-right: 10vw;
+                                        transform: translate(150px, 46px);
+
+                                    }
+
+                                    // *********************************************************** max-724 **********************
+                                    @include breakpoint(max-724) {
+                                        transform: translate(145px, 32px) scale(0.7);
+
+                                    }
+
+                                    // *********************************************************** max-458 **********************
+                                    @include breakpoint(max-458) {
+                                        transform: translate(0, 60px) scale(0.5);
+                                        left: auto;
+                                    }
+
+                                }
+
+                                &.mobile {
+                                    height: 202.86px;
+                                    width: 100.09px;
+                                    right: -25px;
+
+                                    // *********************************************************** max-1305 **********************
+                                    @include breakpoint(max-1305) {
+                                        right: 0;
+                                    }
+
+                                    // *********************************************************** max-1063 **********************
+                                    @include breakpoint(max-1063) {
+                                        left: 0;
+                                        top: 0;
+                                        margin: auto;
+                                        padding-right: 10vw;
+                                        transform: translate(200px, 80px);
+                                    }
+
+                                    // *********************************************************** max-724 **********************
+                                    @include breakpoint(max-724) {
+                                        transform: translate(170px, 57px) scale(0.7);
+
+                                    }
+
+                                    // *********************************************************** max-458 **********************
+                                    @include breakpoint(max-458) {
+                                        transform: translate(0, 77px) scale(0.5);
+                                        left: auto;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .skills-card {
+            // display: none;
+
+            .content {
+                color: var(--color-0);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                 // ***************************************** max-1222 ****************************
+                 @include heightBreakpoint(max-1222){
+                    // border: solid;
+                    overflow: scroll;
+                    height: calc(100vh - 230px);
+                 }
+                 // ***************************************** max-733 ****************************
+                 @include heightBreakpoint(max-733){
+                    height: calc(100vh - 200px);
+                 }
+
+                h3,
+                h2 {
+                    font-family: "Gemunu Libre", sans-serif;
+                }
+
+
+                .skills {
+                    width: 100%;
+                    max-width: 1024px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+
+                    // ***************************************** max-842 ****************************
+                    @include breakpoint(max-842){
+                        // border: solid;
+                        grid-template-columns: 100%;
+                        row-gap: 2vh;
+                    }
+
+                    .skill {
+                        // width: 280px;
+                        justify-self: center;
+                        // border: solid;
+
+                        h3{
+                            // border: solid;
+                            text-align: center;
+                        }
+                        ul{
+                            // border: solid;
+                            width: fit-content;
+                            margin: auto;
+
+                            li{
+                                margin: 5px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-card {
+            // display: none;
+
+            .content {
+                color: var(--color-0);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                height: calc(100% - 125px);
+
+                // ********************************* max-733 ************************************
+                @include heightBreakpoint(max-733){
+                    justify-content: flex-start;
+                    overflow: scroll;
+                }
+
+                h2 {
+                    margin: 0;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+
+
+                    .inputs {
+                        display: flex;
+                        flex-direction: column;
+
+                        label {
+                            margin-bottom: 20px;
+                            display: flex;
+                            flex-direction: column;
+
+                            input,
+                            textarea {
+                                margin-top: 5px;
+                                background: transparent;
+                                border-radius: 10px;
+                                outline: none;
+                                border: 2px solid var(--color--1);
+                                padding: 2%;
+                                color: var(--color-0)
+                            }
+                        }
+                    }
+
+                    .buttons {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        button {
+                            outline: 0;
+                            background: transparent;
+                            color: var(--color-0);
+                            border: 2px solid var(--color-1);
+                            padding: 5px;
+                            border-radius: 7px;
+                        }
+
+                        div {
+                            margin: 10px 0;
+                            font-size: 10px;
+                            color: var(--color--1);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@keyframes change-color {
+    0% {
+        background: white;
+    }
+
+    10% {
+        background: green;
+    }
+
+    20% {
+        background: red;
+    }
+
+    30% {
+        background: violet;
+    }
+
+    40% {
+        background: blue;
+    }
+
+    50% {
+        background: #1e1e1e1e;
+    }
+}

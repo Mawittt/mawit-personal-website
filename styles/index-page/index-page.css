@@ -1,0 +1,51 @@
+.index-page main {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index-page main .intro-card {
+  display: none;
+}
+.index-page main .intro-card .intro-content {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  box-sizing: content-box;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.index-page main .intro-card .intro-content .my-title {
+  color: #FFFFFF;
+}
+.index-page main .intro-card .intro-content .my-title .name em {
+  font-size: 3rem;
+  font-family: "Gemunu Libre", sans-serif;
+}
+.index-page main .intro-card .intro-content .my-title .title {
+  margin-left: 50px;
+  padding-left: 0;
+  font-size: 5rem;
+  font-family: "Gemunu Libre", sans-serif;
+}
+.index-page main .intro-card .intro-content .my-title .title em {
+  font-size: 2rem;
+  font-family: "prompt", sans-serif;
+}
+.index-page main .intro-card .intro-content .description {
+  margin: auto;
+  margin-top: 15vh;
+  max-width: 500px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7254901961);
+}/*# sourceMappingURL=index-page.css.map */

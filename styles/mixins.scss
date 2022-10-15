@@ -1,0 +1,65 @@
+@mixin breakpoint($point) {
+    @if $point == max-1106{
+        @media (max-width : 1106px) {
+            @content
+        }
+    }
+    @else if $point == max-842{
+        @media(max-width : 842px){
+            @content
+        }
+    }
+    @else if $point == max-458{
+        @media(max-width : 458px){
+            @content
+        }
+    }
+    @else if $point == max-306{
+        @media(max-width : 306px){
+            @content
+        }
+    }
+    @else if $point == max-1129{
+        @media(max-width : 1129px){
+            @content
+        }
+    }
+    @else if $point == max-1305{
+        @media(max-width : 1305px){
+            @content
+        }
+    }
+    @else if $point == max-1063{
+        @media(max-width : 1063px){
+            @content
+        }
+    }
+    @else if $point == max-724{
+        @media(max-width : 724px){
+            @content
+        }
+    }
+    @else if $point == max-243{
+        @media(max-width : 243px){
+            @content
+        }
+    }
+}
+
+@mixin heightBreakpoint($point){
+    @if $point == max-617{
+        @media (max-height : 617px) {
+            @content
+        }
+    }
+    @else if $point == max-1222{
+        @media (max-height : 1222px){
+            @content
+        }
+    }
+    @else if $point == max-733{
+        @media (max-height : 733px){
+            @content
+        }
+    }
+}

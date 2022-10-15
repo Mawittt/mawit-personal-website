@@ -1,0 +1,180 @@
+@import "../../variables.scss";
+@import "../../mixins.scss";
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 10px;
+
+    .header-navigate {
+        justify-self: center;
+
+        svg {
+            transform : scale(1.2) rotateZ(180deg);
+            height : 62px;
+            width : 32px; 
+            overflow : auto;
+    
+            
+            path:nth-child(1){
+              transform : translate(0px,0px);
+              animation : smooth-move-1 5s ;
+              animation-iteration-count : infinite;
+              animation-delay : 0.04s;
+            }
+             path:nth-child(2){
+              transform : translate(0px,0px);
+              animation : smooth-move-2 5s ;
+              animation-iteration-count : infinite;
+              animation-delay : 0.03s;
+            } 
+             path:nth-child(3){
+              transform : translate(0px,0px);
+              animation : smooth-move-3 5s ;
+              animation-iteration-count : infinite; 
+              animation-delay : 0.02s;
+            }
+             path:nth-child(4){
+              transform : translate(0px,0px);
+              animation : smooth-move-4 5s ;
+              animation-iteration-count : infinite;
+              animation-delay : 0.01s;
+            }
+             path:nth-child(5){
+                transform : translate(0px,0px);
+                animation : smooth-move-5 5s ;
+                animation-iteration-count : infinite; 
+                animation-delay : 0;
+            }
+        }
+    }
+
+    .options {
+        display: flex;
+        justify-self: flex-end;
+
+        .option {
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+
+            &.menuIcon {
+                width: 10px;
+                height: 39px;
+                position: relative;
+
+                .menu-overlay {
+                    position: fixed;
+                    width: 100vw;
+                    height: 100vh;
+                    background: rgba(20, 20, 20, 0.498);
+                    z-index: 5;
+                    top: 0;
+                    left: 0;
+                    backdrop-filter: blur(5px);
+                    
+                }
+
+                .menu {
+                    z-index: 10;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    transform: translateX(calc(-100% - 20px));
+                    padding: 10px 5px;
+                    background: $dark-background;
+                    color: white;
+                    border-radius: 10px;
+                    width: max-content;
+                    font-size: 25px;
+                    font-family: "Gemunu Libre", sans-serif;
+                    box-shadow: 0px 74px 29px rgba(0, 0, 0, 0.03), 0px 41px 25px rgba(0, 0, 0, 0.1), 0px 18px 18px rgba(0, 0, 0, 0.17), 0px 5px 10px rgba(0, 0, 0, 0.2), 0px 0px 0px rgba(0, 0, 0, 0.2);
+
+                    // ************************** max-458 ****************************************
+                    @include breakpoint(max-458) {
+                        // border: solid;
+                        transform: none;
+                        position: fixed;
+                        width: 80vw;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        top: 5vh;
+                    }
+
+                    // ************************** max-243 ****************************************
+                    @include breakpoint(max-243) {
+                        border: solid;
+                        font-size: inherit;
+
+
+                    }
+
+                    .option {
+                        padding: 5px;
+                        padding-right: 20px;
+
+                        .option-icon {
+                            margin-right: 10px;
+
+                            // ************************** max-243 ****************************************
+                            @include breakpoint(max-243) {
+                                width: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.themeIcon {
+                width: 40px;
+                height: 39.87px;
+            }
+        }
+
+        img {
+            border: solid;
+        }
+    }
+}
+
+
+
+
+@keyframes smooth-move-1{
+    0%{transform : translateY(0)}
+    4.0%{transform : translateY(-5px)}
+    7.5%{transform : translateY(5px)}
+    9.5%{transform : translateY(-1px)}
+    10.0%{transform : translateY(0)}
+  }
+  @keyframes smooth-move-2{
+    0%{transform : translateY(0)}
+    4%{transform : translateY(-6px)}
+    7.5%{transform : translateY(6px)}
+    9.5%{transform : translateY(-1px)}
+    10%{transform : translateY(0)}
+  }
+  @keyframes smooth-move-3{
+    0%{transform : translateY(0)}
+    4.0%{transform : translateY(-8px)}
+    7.5%{transform : translateY(7px)}
+    9.5%{transform : translateY(-1px)}
+    10.0%{transform : translateY(0)}
+  }
+  @keyframes smooth-move-4{
+    0%{transform : translateY(0)}
+    4.0%{transform : translateY(-12px)}
+    7.5%{transform : translateY(8px)}
+    9.5%{transform : translateY(-1px)}
+    10.0%{transform : translateY(0)}
+  }
+  @keyframes smooth-move-5{
+    0%{transform : translateY(0)}
+    4.0%{transform : translateY(-16px)}
+    7.5%{transform : translateY(9px)}
+    9.5%{transform : translateY(-1px)}
+    10.0%{transform : translateY(0)}
+  }

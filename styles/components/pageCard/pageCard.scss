@@ -1,0 +1,229 @@
+@import "../../mixins.scss";
+
+.card-container {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+      // ********************************************************************************************** max-458 ***************************************************/
+      @include breakpoint(max-458) {
+        height: 100vh;
+        width: 100vw;
+        border-radius: 0;
+    }
+
+    .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-shadow: -772px 732px 298px rgba(0, 0, 0, 0.01), -494px 468px 272px rgba(0, 0, 0, 0.07), -278px 263px 230px rgba(0, 0, 0, 0.25), -123px 117px 170px rgba(0, 0, 0, 0.43), -31px 29px 94px rgba(0, 0, 0, 0.49), 0px 0px 0px rgba(0, 0, 0, 0.5);
+        ;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    // **** effect styles
+    &.showUp {
+        display: block;
+    }
+
+    &.showDown {
+        display: block;
+    }
+
+    &.closeUp {
+        display: none;
+    }
+
+    &.closeDown {
+        display: none;
+    }
+
+
+    &.open-down-mobile{
+        animation : open-down-mobile 2s ease-out;
+        // animation-iteration-count : infinite ;
+    }
+    &.close-down-mobile{
+    display: block;
+    animation : close-down-mobile 2s ease-out;
+    }
+    &.close-up-mobile{
+    display: block;
+    animation : close-up-mobile var(--duration) ease-out;
+    }
+    &.open-up-mobile{
+    display: block;
+    animation : open-up-mobile var(--duration) ease-out;
+    }
+    &.open-down{
+    display: block;
+    animation : open-down var(--duration) ease-out;
+    animation-fill-mode: both;
+    }
+    &.close-down{
+    display: block;
+    animation : close-down var(--duration) ease-out;
+    animation-fill-mode: both;
+    }
+    &.open-up{
+    display: block;
+    animation : open-up var(--duration) ease-out;
+    animation-fill-mode: both;
+    }
+    &.close-up{
+    display: block;
+    animation : close-up var(--duration) ease-out;
+    animation-fill-mode: both;
+    }
+}
+
+:root{
+    --card-height : 300px;
+    --card-height-negative : -630px;
+    --duration : 500ms;
+}
+
+@keyframes open-down-mobile{
+    100%{
+      transform : scale(1);
+      display : block;
+    }
+    80%{
+      transform: perspective(600px) rotateX(0) translateZ(0px) scale(0.8);
+      opacity : 1;
+      position: absolute; 
+      border-radius: 10px;
+    }
+    20%{
+      transform: perspective(600px) rotateX(80deg) translateZ(var(--card-height)) translateY(var(--card-height-negative)) ;
+      opacity: 0;
+      border-radius: 20px;
+      position: absolute;
+      display : none;
+    }
+    0%{
+      transform: perspective(600px) rotateX(80deg) translateZ(var(--card-height)) translateY(var(--card-height-negative)) ;
+      opacity: 0;
+      border-radius: 20px;
+      position: absolute;
+      display : block;
+    }
+  }
+  @keyframes close-down-mobile{
+    100%{
+       transform: perspective(600px) rotateX(-110deg) translateZ(var(--card-height))     translateY(var(--card-height)) scale(0.8);
+      opacity : 0;
+      position: absolute; 
+      border-radius: 10px;
+      display : none;
+    }
+    20%{
+        transform: perspective(600px) rotateX(0) translateZ(0px) scale(0.8);
+      position : absolute;
+      opacity: 1;
+      border-radius: 10px
+      
+    }
+    0%{
+      transform: perspective(600px) rotateX(0) translateZ(0px);
+    }
+  }
+  @keyframes close-up-mobile{
+    0%{
+      transform : scale(1);
+    }
+    20%{
+      transform: perspective(600px) rotateX(0) translateZ(0px) scale(0.8);
+      opacity : 1;
+      position: absolute;
+      border-radius : 10px;
+    }
+    100%{
+      transform: perspective(600px) rotateX(80deg) translateZ(var(--card-height)) translateY(var(--card-height-negative)) ;
+      opacity: 0;
+      border-radius: 20px;
+      position: absolute;
+      display : none;
+    }
+  }
+  @keyframes open-up-mobile{
+    0%{
+       transform: perspective(600px) rotateX(-110deg) translateZ(var(--card-height))     translateY(var(--card-height)) scale(0.8);
+      opacity : 0;
+      position: absolute; 
+      border-radius: 10px;
+        display : block;
+      
+      
+    }
+    80%{
+        transform: perspective(600px) rotateX(0) translateZ(0px) scale(0.8);
+      position : absolute;
+      opacity: 1;
+      border-radius : 10px;
+    }
+    100%{
+      transform: perspective(600px) rotateX(0) translateZ(0px);
+      display : block;
+    }
+  }
+  @keyframes open-down{
+      0%{
+      transform: perspective(600px) rotateX(80deg) translateZ(var(--card-height)) translateY(var(--card-height-negative));
+      opacity: 0;
+      border-radius: 20px;
+      position: absolute;
+      display : block;
+    }
+    100%{
+      transform: perspective(600px) rotateX(0) translateZ(0px);
+      opacity : 1;
+      position: absolute;
+      display : block !important;
+    }
+  
+  }
+  @keyframes close-down{
+    0%{
+        transform: perspective(600px) rotateX(0) translateZ(0px);
+      position : absolute;
+      opacity: 1;
+    }
+     100%{
+       transform: perspective(600px) rotateX(-110deg) translateZ(var(--card-height))     translateY(var(--card-height));
+      opacity : 0;
+      position: absolute;
+       display : none
+    }
+  }
+  @keyframes close-up{
+    0%{
+      transform: perspective(600px) rotateX(0) translateZ(0px);
+      opacity : 1;
+      position: absolute;     
+    }
+    100%{
+      transform: perspective(600px) rotateX(80deg) translateZ(var(--card-height)) translateY(var(--card-height-negative));
+      opacity: 0;
+      border-radius: 20px;
+      position: absolute;
+      display : none;
+    }
+  }
+  @keyframes open-up{
+    0%{
+       transform: perspective(600px) rotateX(-110deg) translateZ(var(--card-height))     translateY(var(--card-height));
+      opacity : 0;
+      position: absolute;
+      display: block
+      
+      
+    }
+    100%{
+        transform: perspective(600px) rotateX(0) translateZ(0px);
+      position : absolute;
+      opacity: 1;
+      display: block
+    }
+  }
