@@ -2,8 +2,10 @@ import React, { MutableRefObject, useEffect, useRef } from "react";
 import Navigator from "../classes/Navigator";
 import MouseEventHandler from "../classes/MouseEventHandler";
 import axios from "axios";
+import useStore from "../facade/store";
 
 const useHome = () => {
+    const {overlay} = useStore()
 	const navigator: MutableRefObject<Navigator | null> = useRef<Navigator | null>(null);
 	const emailRef = useRef(null);
 	const subjectRef = useRef(null);
@@ -11,7 +13,7 @@ const useHome = () => {
 
 	useEffect(instantiateNavigator, []);
 
-	return { navigator, emailRef, subjectRef, bodyRef, sendMessage };
+	return { navigator, emailRef, subjectRef, bodyRef, sendMessage, overlay};
 
 	function instantiateNavigator(): void {
 		navigator.current = new Navigator();

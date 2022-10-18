@@ -1,14 +1,20 @@
-import '../styles/globals.scss'
-import "../styles/test/test.css"
-import "../styles/index-page/index-page.scss"
-import "../styles/components/header/header.scss"
-import "../styles/components/scroll-indicator/scrollIndicator.scss"
-import "../styles/components/pageCard/pageCard.scss"
+import "../styles/globals.scss";
+import "../styles/test/test.css";
+import "../styles/index-page/index-page.scss";
+import "../styles/components/header.scss";
+import "../styles/components/scrollIndicator.scss";
+import "../styles/components/pageCard.scss";
+import "../styles/components/project.scss";
 
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { ContextProvider } from "../context/context";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+	return (
+		<ContextProvider>
+			<Component {...pageProps} />
+		</ContextProvider>
+	);
 }
 
-export default MyApp
+export default MyApp;

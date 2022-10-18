@@ -1,0 +1,283 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+
+
+:root {
+    // * images dimensions
+
+    --desktop-mockup-width: 602.67px;
+    --tablet-mockup-width: 179.19px;
+    --mobile-mockup-width: 100.09px;
+    --desktop-mockup-height: calc(var(--desktop-mockup-width) * calc(364 / 602.67));
+    --tablet-mockup-height: calc(var(--tablet-mockup-width) * calc(274.97 / 179.19));
+    --mobile-mockup-height: calc(var(--mobile-mockup-width) * calc(202.86 / 100.09));
+
+    // ******************************************* max-724 *************************************
+    @include breakpoint(max-724) {
+        --desktop-mockup-width: calc(602.67px / 2);
+        --tablet-mockup-width: calc(179.19px / 2);
+        --mobile-mockup-width: calc(100.09px / 2);
+
+    }
+}
+
+.project {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
+    color: var(--color-0);
+    margin: auto;
+    overflow-y: scroll;
+
+
+    // // *********************************************************** max-458 **********************
+    // @include breakpoint(max-458) {
+    //     justify-content: space-around;
+    // }
+
+    .title {
+        padding: 0;
+
+        h2 {
+            padding: 0;
+            margin: 0;
+            font-family: 'Gemunu Libre', sans-serif;
+        }
+    }
+
+    .project-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: fit-content;
+        width: 100%;
+        max-width: 1024px;
+
+
+
+        // // *********************************************************** max-724 **********************
+        // @include breakpoint(max-724) {
+        //     justify-content: center;
+        // }
+
+        // // *********************************************************** max-617 **********************
+        // @include heightBreakpoint(max-617) {
+        //     align-items: flex-start;
+        //     overflow: hidden;
+        // }
+        // *********************************************************** max-1106 **********************
+        @include breakpoint(max-1106) {
+            flex-direction: column-reverse;
+            padding-top: 3vh;
+        }
+
+
+
+
+        .project-info {
+            max-width: 250px;
+            height: 100%;
+
+            // // *********************************************************** max-458 **********************
+            // @include breakpoint(max-458) {
+            //     width: 70vw;
+            // }
+            // ******************************************* max306max-306 *************************************
+            @include breakpoint(max-306) {
+                width: 100%;
+            }
+
+            .name {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+
+                // ******************************************* max306max-306 *************************************
+                @include breakpoint(max-306) {
+                    width: fit-content;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                }
+
+                // // ****************************************************** max-724 ***************************
+                // @include breakpoint(max-724) {
+                //     justify-content: center;
+                // }
+
+                // h2 {
+                //     margin: 0;
+                //     padding: 0;
+                //     margin-right: 5px;
+                //     font-family: "Gemunu Libre", sans-serif;
+                // }
+            }
+
+            .description {
+                margin-bottom: 20px;
+
+                // ******************************************* max306max-306 *************************************
+                @include breakpoint(max-306) {
+                    width: 100%;
+                }
+            }
+
+            .features-section {
+                overflow: hidden;
+                margin-bottom: 20px;
+
+
+                h3 {
+                    margin: 0;
+                    padding: 0;
+                    margin-bottom: 5px;
+
+                    // ******************************************* max306max-306 *************************************
+                    @include breakpoint(max-306) {
+                        text-align: center;
+                    }
+
+                    // // ****************************************************** max-724 ***************************
+                    // @include breakpoint(max-724) {
+                    //     text-align: center;
+                    // }
+
+                }
+
+                ul.features {
+                    // max-width: 100px;
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    margin: 0;
+                    padding: 0;
+                    width: max-content;
+
+                    // overflow: hidden;
+
+                    .feature {
+                        color: var(--color--3, --color--2);
+                        background: var(--background-1);
+                        padding: 10px;
+                        margin: 0 5px;
+                        font-size: 12px;
+                        border-radius: 10px 1px;
+
+                        // // *********************************************************** max-724 **********************
+                        // @include breakpoint(max-724) {
+                        //     color: var(--color-0);
+                        // }
+                    }
+                }
+            }
+
+            .technologies-section {
+                overflow: hidden;
+
+                h3 {
+                    margin: 0;
+                    padding: 0;
+
+                    // ******************************************* max306max-306 *************************************
+                    @include breakpoint(max-306) {
+                        text-align: center;
+                    }
+
+                    // // ****************************************************** max-724 ***************************
+                    // @include breakpoint(max-724) {
+                    //     text-align: center;
+                    // }
+                }
+
+                .technologies {
+                    display: flex;
+                    align-items: center;
+
+                    .technology {
+                        margin: 0 7px;
+                        min-width: 50px;
+                        height: fit-content;
+                    }
+                }
+            }
+        }
+
+        .project-mockups {
+            position: relative;
+            min-height: 364px;
+            width: 602.67px;
+
+
+            // ******************************************* max-724 *************************************
+            @include breakpoint(max-724) {
+                width: 100%;
+                min-height: var(--desktop-mockup-height);
+            }
+
+            // // *********************************************************** max-1063 **********************
+            // @include breakpoint(max-1063) {
+            //     position: static;
+            //     // z-index: -1;
+            // }
+
+            .mockup {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -2;
+
+                &.desktop {
+                    width: var(--desktop-mockup-width);
+                    // height: 34px;
+                    height: var(--desktop-mockup-height);
+
+                    // ******************************************* max-724 *************************************
+                    @include breakpoint(max-724) {
+                        margin: auto;
+                        left: 0;
+
+                    }
+                }
+
+                &.tablet {
+                    top: calc(364px - 274.97px);
+                    height: var(--tablet-mockup-height);
+                    width: var(--tablet-mockup-width);
+                    right: 25px;
+
+                    // ******************************************* max-724 *************************************
+                    @include breakpoint(max-724) {
+                        margin: auto;
+                        left: 0;
+                        transform: translate(100px, -44px);
+
+                    }
+
+                }
+
+
+
+                &.mobile {
+                    top: calc(364px - 202.86px);
+                    height: var(--mobile-mockup-height);
+                    width: var(--mobile-mockup-width);
+                    width: var(--mobile-mockup-width);
+
+                    // ******************************************* max-724 *************************************
+                    @include breakpoint(max-724) {
+                        margin: auto;
+                        left: 0;
+                        transform: translate(120px, -80px);
+
+                    }
+                }
+
+            }
+        }
+    }
+}
