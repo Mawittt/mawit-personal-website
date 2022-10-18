@@ -1,17 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import leftArrow from "../../public/icons/left-arrow-icon.png";
-import rightArrow from "../../public/icons/right-arrow-icon.png";
-import webIcon from "../../public/icons/web-icon.png";
-import ndoloMobileMockup from "../../public/images/ndolo-mobile-mockup.png";
-import ndoloTabletMockup from "../../public/images/ndolo-tablet-mockup.png";
-import ndoloPCMockup from "../../public/images/ndolo-pc-mockup.png";
-import expressLogo from "../../public/logos/express-logo.png";
-import mongoDBLogo from "../../public/logos/mongoDB-logo.png";
-import nodeJSLogo from "../../public/logos/nodeJS-logo.png";
-import reactLogo from "../../public/logos/react-logo.png";
-import sassLogo from "../../public/logos/sass-logo.png";
-import socketIOLogo from "../../public/logos/socketIO-logo.png";
 import useProject from "./useProject";
 
 const Project = () => {
@@ -25,7 +13,7 @@ const Project = () => {
 				<div className="project-info">
 					<div className="name">
 						<h2>
-							<a href="https://ndolo.herokuapp.com/" target={"_blank"}>
+							<a href="https://ndolo.herokuapp.com/" target={"_blank"} rel="noreferrer">
 								{project.name}
 							</a>
 						</h2>
@@ -54,7 +42,7 @@ const Project = () => {
 						<div className="technologies">
 							{project.technologies.map((technology, index) => (
 								<div className="technology" key={index}>
-									<Image src={technology} />
+									{/* <Image src={technology} /> */}
 								</div>
 							))}
 						</div>
@@ -62,13 +50,13 @@ const Project = () => {
 				</div>
 				<div className="project-mockups">
 					<div className="desktop mockup">
-						<Image src={project.desktopPreview} layout={"fill"} />
+						{/* <Image src={project.desktopPreview} layout={"fill"} /> */}
 					</div>
 					<div className="tablet mockup">
-						<Image src={project.tabletPreview} layout={"fill"} />
+						{/* <Image src={project.tabletPreview} layout={"fill"} /> */}
 					</div>
 					<div className="mobile mockup">
-						<Image src={project.mobilePreview} layout={"fill"} />
+						{/* <Image src={project.mobilePreview} layout={"fill"} /> */}
 					</div>
 				</div>
 			</div>
