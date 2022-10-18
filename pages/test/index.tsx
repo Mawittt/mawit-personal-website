@@ -7,7 +7,7 @@ const Test: NextPage = () => {
 	return (
         <div className="index">
             <div className="inner-box">
-                <h2 className="header" onClick={testFunction}>
+                <h2 className="header" >
                     this is a test of my portfolio
                 </h2>
             </div>
