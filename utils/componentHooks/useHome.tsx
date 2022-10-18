@@ -1,8 +1,8 @@
 import React, { MutableRefObject, useEffect, useRef } from "react";
-import Navigator from "../classes/Navigator";
-import MouseEventHandler from "../classes/MouseEventHandler";
+import Navigator from "../../classes/Navigator";
+import MouseEventHandler from "../../classes/MouseEventHandler";
 import axios from "axios";
-import useStore from "../facade/store";
+import useStore from "../../facade/store";
 
 const useHome = () => {
     const {overlay} = useStore()
@@ -12,7 +12,7 @@ const useHome = () => {
 	const bodyRef = useRef(null);
 
 	useEffect(instantiateNavigator, []);
-    return <>this is the use home stuff</>
+
 	return { navigator, emailRef, subjectRef, bodyRef, sendMessage, overlay};
 
 	function instantiateNavigator(): void {

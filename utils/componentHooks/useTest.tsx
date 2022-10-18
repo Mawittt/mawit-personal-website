@@ -2,9 +2,8 @@ import React from "react";
 import internal from "stream";
 
 const useTest = () => {
-	
-    return <>this is another page</>;
 
+    return {testFunction}
     function testFunction(){
         alert("hello runing my next test function")
 

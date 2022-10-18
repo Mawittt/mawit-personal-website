@@ -1,9 +1,10 @@
 import { NextPage } from "next";
 import React from "react";
-// import useTest from "./useTest";
+import useTest from "../../utils/componentHooks/useTest";
+
 
 const Test: NextPage = () => {
-    // const {testFunction} = useTest()
+    const {testFunction} = useTest()
 	return (
         <div className="index">
             <div className="inner-box">
