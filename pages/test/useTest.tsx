@@ -3,7 +3,7 @@ import internal from "stream";
 
 const useTest = () => {
 	
-    return {testFunction};
+    return <>this is another page</>;
 
     function testFunction(){
         alert("hello runing my next test function")

@@ -12,7 +12,7 @@ const useHome = () => {
 	const bodyRef = useRef(null);
 
 	useEffect(instantiateNavigator, []);
-
+    return <>this is the use home stuff</>
 	return { navigator, emailRef, subjectRef, bodyRef, sendMessage, overlay};
 
 	function instantiateNavigator(): void {

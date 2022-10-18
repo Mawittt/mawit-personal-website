@@ -8,10 +8,10 @@ import crossPlatformIllustration from "../public/illustrations/cross-platform.pn
 import performanceIllustration from "../public/illustrations/performance.png";
 import UiIllustration from "../public/illustrations/ui.png";
 import linkedInLogo from "../public/logos/linkedIn-logo.png";
-import useHome from "./useHome";
+// import useHome from "./useHome";
 
 const Home: NextPage = () => {
-	const { navigator, emailRef, subjectRef, bodyRef, sendMessage , overlay } = useHome();
+	// const { navigator, emailRef, subjectRef, bodyRef, sendMessage , overlay } = useHome();
 	return (
 		// <div className={"index-page"}>
 		// 	<Head>
