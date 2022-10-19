@@ -40,7 +40,7 @@ export function useMenu() {
         if(!setMenuInState) return
         if(!setOverlay) return 
 
-        setOverlay(overlay => !overlay)
+        setOverlay((overlay : boolean) => !overlay)
         setMenuInState (!menu) 
     }
     function setMenu(value : boolean){
