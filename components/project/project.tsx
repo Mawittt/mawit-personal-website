@@ -42,7 +42,7 @@ const Project = () => {
 						<div className="technologies">
 							{project.technologies.map((technology, index) => (
 								<div className="technology" key={index}>
-									<Image src={technology} />
+									<Image src={technology} alt="technology logo"/>
 								</div>
 							))}
 						</div>
@@ -50,13 +50,13 @@ const Project = () => {
 				</div>
 				<div className="project-mockups">
 					<div className="desktop mockup">
-						<Image src={project.desktopPreview} layout={"fill"} />
+						<Image src={project.desktopPreview} layout={"fill"} alt="desktop preview"/>
 					</div>
 					<div className="tablet mockup">
-						<Image src={project.tabletPreview} layout={"fill"} />
+						<Image src={project.tabletPreview} layout={"fill"} alt="tablet preview"/>
 					</div>
 					<div className="mobile mockup">
-						<Image src={project.mobilePreview} layout={"fill"} />
+						<Image src={project.mobilePreview} layout={"fill"} alt="mobile preview"/>
 					</div>
 				</div>
 			</div>

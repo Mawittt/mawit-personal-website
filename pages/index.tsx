@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 	return (
 		<div className={"index-page"}>
 			<Head>
-				<title>Mawit's Personal Website</title>
+				<title>Mawit&#39;s Personal Website</title>
 				<meta name="description" content="a website to showcase Mawit's skills" />
 				<link rel="icon" href="/icons/favicon.png" />
 			</Head>
@@ -179,8 +179,8 @@ const Home: NextPage = () => {
 							<div className="buttons">
 								<button onClick={sendMessage}>Send a message</button>
 								<div>or</div>
-								<a href="https://www.linkedin.com/in/mawit-bikom-754558224/" target={"_blank"}>
-									<Image src={linkedInLogo} />
+								<a href="https://www.linkedin.com/in/mawit-bikom-754558224/" target={"_blank"} rel="noreferrer">
+									<Image src={linkedInLogo} alt="linkedIn logo"/>
 								</a>
 							</div>
 						</form>
