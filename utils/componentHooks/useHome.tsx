@@ -1,15 +1,24 @@
-import React, { MutableRefObject, useEffect, useRef } from "react";
+import React, { ElementType, FormEvent, MutableRefObject, useEffect, useRef } from "react";
 import Navigator from "../../classes/Navigator";
 import MouseEventHandler from "../../classes/MouseEventHandler";
 import axios from "axios";
 import useStore from "../../facade/store";
 
+
+// *interfaces
+
+interface MessageData{
+    email? : string,
+    subject? : string,
+    body? : string
+}
+
 const useHome = () => {
     const {overlay} = useStore()
 	const navigator: MutableRefObject<Navigator | null> = useRef<Navigator | null>(null);
-	const emailRef = useRef(null);
-	const subjectRef = useRef(null);
-	const bodyRef = useRef(null);
+	const emailRef = useRef<HTMLInputElement>(null);
+	const subjectRef = useRef<HTMLInputElement>(null);
+	const bodyRef = useRef<HTMLTextAreaElement>(null);
 
 	useEffect(instantiateNavigator, []);
 
@@ -21,7 +30,7 @@ const useHome = () => {
 		console.log(navigator.current);
 		return;
 	}
-	async function sendMessage(e) {
+	async function sendMessage(e : MouseEvent | FormEvent)  {
 		try {
 			e.preventDefault();
 			const data = constructData();
@@ -31,13 +40,14 @@ const useHome = () => {
 			console.log(err);
 		}
 		function constructData() {
-			return {
-				email: emailRef?.current?.value,
+            
+  			return {
+                email: emailRef?.current?.value,
 				subject: subjectRef?.current?.value,
 				body: bodyRef?.current?.value,
 			};
 		}
-		async function send(data) {
+		async function send(data : MessageData) {
 			if (!data.body) return alert("please fill at least some 'body' text");
 			const res = await axios.post("/api/sendMessage", data);
 			alert("thanks very much for reaching out");
