@@ -15,19 +15,19 @@ interface MessageData{
 
 const useHome = () => {
     const {overlay} = useStore()
-	const navigator: MutableRefObject<Navigator | null> = useRef<Navigator | null>(null);
+	const myNavigator: MutableRefObject<Navigator | null> = useRef<Navigator | null>(null);
 	const emailRef = useRef<HTMLInputElement>(null);
 	const subjectRef = useRef<HTMLInputElement>(null);
 	const bodyRef = useRef<HTMLTextAreaElement>(null);
 
 	useEffect(instantiateNavigator, []);
 
-	return { navigator, emailRef, subjectRef, bodyRef, sendMessage, overlay};
+	return { navigator: myNavigator, emailRef, subjectRef, bodyRef, sendMessage, overlay};
 
 	function instantiateNavigator(): void {
-		navigator.current = new Navigator();
-		const mouse = new MouseEventHandler(navigator.current);
-		console.log(navigator.current);
+		myNavigator.current = new Navigator();
+		const mouse = new MouseEventHandler(myNavigator.current);
+		alert(JSON.stringify(navigator.mediaDevices))
 		return;
 	}
 	async function sendMessage(e : MouseEvent | FormEvent)  {
