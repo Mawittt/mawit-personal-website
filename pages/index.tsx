@@ -10,7 +10,7 @@ import useHome from "../utils/componentHooks/useHome";
 
 
 const Home: NextPage = () => {
-	const { navigator, emailRef, subjectRef, bodyRef, sendMessage , overlay } = useHome();
+	const { navigator, emailRef, subjectRef, bodyRef, sendMessage , overlay , closeMenu} = useHome();
 	return (
 		<div className={"index-page"}>
 			<Head>
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 			</Head>
 
 			<main>
-                {overlay && <div className="menu-overlay" onClick={()=>alert()}></div>}
+                {overlay && <div className="menu-overlay" onClick={closeMenu}></div>}
 				<PageCard className={"intro-card "} id={"intro"} navigator={navigator} noTopScroll noBottomScroll={false}>
 					<div className="intro-content">
 						<div className="my-title">
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
 								I am <em>Mawit Bikom Gad</em> a
 							</div>
 							<div className="title">
-								Web Developer <em>&</em> UI/UX Designer
+								Web Developer <em>&</em> <span>UI/UX Designer</span>
 							</div>
 						</div>
 						<div className="description">

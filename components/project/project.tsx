@@ -30,21 +30,37 @@ const Project = () => {
 					<div className="features-section">
 						<h3>Features</h3>
 						<ul className="features">
+                            <div className="moveable">
 							{project.features.map((feature, index) => (
 								<li className="feature" key={index}>
 									{feature}
 								</li>
 							))}
+							{project.features.map((feature, index) => (
+								<li className="feature" key={index}>
+									{feature}
+								</li>
+							))}
+
+                            </div>
 						</ul>
 					</div>
 					<div className="technologies-section">
 						<h3>Technologies</h3>
 						<div className="technologies">
+                            <div className="moveable">
 							{project.technologies.map((technology, index) => (
 								<div className="technology" key={index}>
 									<Image src={technology} alt="technology logo"/>
 								</div>
 							))}
+							{project.technologies.map((technology, index) => (
+								<div className="technology" key={index}>
+									<Image src={technology} alt="technology logo"/>
+								</div>
+							))}
+
+                            </div>
 						</div>
 					</div>
 				</div>

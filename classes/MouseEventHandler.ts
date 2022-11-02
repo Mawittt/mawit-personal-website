@@ -136,8 +136,9 @@ export default class MouseEventHandler {
 	}
 	isOnScrollingElement(e: Event): boolean {
 		const scrollableElement: Element | null = isOnScrollable(e);
+        console.log(scrollableElement)
         const self = this
-
+ 
 		return isTotallyScrolled(scrollableElement)
 
 		function isOnScrollable(e: Event) {
@@ -156,7 +157,6 @@ export default class MouseEventHandler {
 		function isTotallyScrolled(element: Element | null) : boolean{
             self.scrollingElement = element
 			if (element === null) return false;
-
             const isAtBottom = Math.abs(element.scrollHeight - element.clientHeight - element.scrollTop) < 1;
             const isAtTop = element.scrollTop === 0
             return !(isAtBottom || isAtTop)

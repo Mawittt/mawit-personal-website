@@ -160,19 +160,27 @@
 
                     // overflow: hidden;
 
-                    .feature {
-                        color: var(--color--3, --color--2);
-                        background: var(--background-1);
-                        padding: 10px;
-                        margin: 0 5px;
-                        font-size: 12px;
-                        border-radius: 10px 1px;
+                    .moveable{
+                        display: flex;
+                        align-items: center;
+                        animation: move-infinitely 20s linear;
+                        animation-iteration-count: infinite;
 
-                        // // *********************************************************** max-724 **********************
-                        // @include breakpoint(max-724) {
-                        //     color: var(--color-0);
-                        // }
+                        .feature {
+                            color: var(--color--3, --color--2);
+                            background: var(--background-1);
+                            padding: 10px;
+                            margin: 0 5px;
+                            font-size: 12px;
+                            border-radius: 10px 1px;
+    
+                            // // *********************************************************** max-724 **********************
+                            // @include breakpoint(max-724) {
+                            //     color: var(--color-0);
+                            // }
+                        }
                     }
+
                 }
             }
 
@@ -197,12 +205,18 @@
                 .technologies {
                     display: flex;
                     align-items: center;
-
-                    .technology {
-                        margin: 0 7px;
-                        min-width: 50px;
-                        height: fit-content;
+                    .moveable{
+                        display: flex;
+                        align-items: center;
+                        animation: move-infinitely 20s linear;
+                        animation-iteration-count: infinite;
+                        .technology {
+                            margin: 0 7px;
+                            min-width: 50px;
+                            height: fit-content;
+                        }
                     }
+
                 }
             }
         }
@@ -279,5 +293,15 @@
 
             }
         }
+    }
+}
+
+
+@keyframes move-infinitely {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translate(-50%);
     }
 }
