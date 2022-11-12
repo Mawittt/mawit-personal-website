@@ -13,7 +13,7 @@ const Project = () => {
 				<div className="project-info">
 					<div className="name">
 						<h2>
-							<a href="https://ndolo.herokuapp.com/" target={"_blank"} rel="noreferrer">
+							<a href={project.link} target={"_blank"} rel="noreferrer">
 								{project.name}
 							</a>
 						</h2>

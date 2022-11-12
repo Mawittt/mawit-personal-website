@@ -17,7 +17,7 @@ export const project =  {
     leftArrow : leftArrow,
     rightArrow : rightArrow,
     name : "Ndolo",
-    link : "https://ndolo.herokuapp.com/",
+    link : "https://ndolo-web-client.vercel.app/",
     description : "a dating web app for single Cameroonians. most especially those in the diaspora",
     features : ["text chats", "account search" , "basic search" , "friend request"],
     technologies : [expressLogo,mongoDBLogo,nodeJSLogo,reactJSLogo,sassLogo,socketIOLogo],
